@@ -195,7 +195,7 @@ try:
         input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
         print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
         time.sleep(3)
-        list_lagu = ["/musik/maling_maling_kecil_dihakimi.mp3"]
+        list_lagu = ["musik/maling_maling_kecil_dihakimi.mp3"]
         pilih_lagu = random.choice(list_lagu)
         perintah_putar_musik = f"mpv {pilih_lagu}"
         putar_musik = subprocess.Popen(perintah_putar_musik, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
