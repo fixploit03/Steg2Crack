@@ -35,6 +35,7 @@ import subprocess
 import time
 import shutil
 import platform
+import random 
 from datetime import datetime
 
 ## Variabel warna
@@ -194,6 +195,10 @@ try:
         input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
         print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
         time.sleep(3)
+        list_lagu = ["/musik/maling_maling_kecil_dihakimi.mp3"]
+        pilih_lagu = random.choice(list_lagu)
+        perintah_putar_musik = f"mpv {pilih_lagu}"
+        putar_musik = subprocess.Popen(perintah_putar_musik, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         for kata_sandi in daftar_kata_sandi:
             perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
             try:
@@ -210,7 +215,8 @@ try:
                     if os.path.isfile(nama_file_tersembunyi):
                         print(f"{p}[{h}+{p}] File yang disembunyikan : {h}{nama_file_tersembunyi}{r}") 
                     print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
-                    kata_sandi_ditemukan = True 
+                    kata_sandi_ditemukan = True
+                    putar_musik.terminate()
                     break
                 else:
                     print(f"{p}[{m}-{p}] Kata sandi salah : {m}{kata_sandi}{r}")
@@ -224,6 +230,7 @@ try:
             waktu_akhir = datetime.now()
             print(f"{p}[{m}-{p}] Kata sandi tidak ditemukan, coba file Wordlist yang lain.{r}")
             print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+            putar_musik.terminate()
 except Exception as e:
     print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
     exit(1)
