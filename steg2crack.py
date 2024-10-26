@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 #------------------------------------------------------------------------------------------------------------------
-# Program   : Steg2crack
+# Program   : Steg2Crack
 # Deskripsi : Program Python sederhana yang dirancang untuk meng-crack file stego dengan teknik Dictionary Attack.
 # Pembuat   : fixploit03 
 # Rilis     : 5-10-2024
-# Github    : https://github.com/fixploit03/steg2crack/
+# Github    : https://github.com/fixploit03/Steg2Crack/
 #------------------------------------------------------------------------------------------------------------------
 # MIT License
 # 
@@ -51,7 +51,7 @@ sistem_operasi = platform.system()
 if sistem_operasi == "Linux":
     os.system("clear")
 else:
-    print(f"{p}[{m}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program Steg2crack.{r}")
+    print(f"{p}[{m}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program Steg2Crack.{r}")
     exit(1)
     
 # Banner program 
@@ -62,10 +62,10 @@ print(f"""
 {c}\__ \ ||  __/ (_| |/ __/ (__| | | (_| | (__|   < {r}
 {c}|___/\__\___|\__, |_____\___|_|  \__,_|\___|_|\_|{r}
 {c}              |___/                              {r}
-{p}[{b}*{p}] Program   : {b}Steg2crack{r}
+{p}[{b}*{p}] Program   : {b}Steg2Crack{r}
 {p}[{b}*{p}] Deskripsi : {b}Program Python untuk meng-crack file stego{r}
 {p}[{b}*{p}] Pembuat   : {b}fixploit03{r}
-{p}[{b}*{p}] Github    : {b}https://github.com/fixploit03/Steg2crack/{r}
+{p}[{b}*{p}] Github    : {b}https://github.com/fixploit03/Steg2Crack/{r}
 {p}[{b}*{p}] Team      : {b}ArSec (Arjuna Security){r}
 """)
 
