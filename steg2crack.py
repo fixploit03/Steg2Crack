@@ -141,8 +141,8 @@ print(f"""
 while True:
     try:
         file_stego = input(f"{p}[{b}#{p}] Masukkan nama file stego : ")
-        with open(file_stego, "rb"):
-            perintah_cek_file_stego = f"strings {file_stego}"
+        with open(file_stego, "rb") as fs:
+            perintah_cek_file_stego = f"strings {fs}"
             try:
                 cek_file_stego = subprocess.run(perintah_cek_file_stego, shell=True, capture_output=True, text=True)
                 if cek_file_stego.returncode == 0:
