@@ -172,8 +172,8 @@ while True:
 while True:
     try:
         file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file wordlist : ")
-        with open(file_wordlist, "r", encoding="latin-1", errors="ignore"):
-            daftar_kata_sandi = file_wordlist.read().splitlines()
+        with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
+            daftar_kata_sandi = fw.read().splitlines()
             jumlah_kata_sandi = len(daftar_kata_sandi)
             waktu_mulai = datetime.now()
             print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file wordlist : {h}{jumlah_kata_sandi}{r}")
