@@ -33,9 +33,7 @@ import os
 import re
 import subprocess           
 import time
-import shutil
 import platform
-import random 
 from datetime import datetime
 
 ## Variabel warna
@@ -56,73 +54,6 @@ else:
     print(f"{p}[{m}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program Steg2crack.{r}")
     exit(1)
     
-print(f"""
-{c}Selamat datang di Steg2crack{r}
-{p}----------------------------{r}
-{r}
-{p}Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file stego menggunakan {r}
-{p}teknik Dictionary Attack.{r}
-
-{c}Informasi{r}
-{p}---------{r}
-{r}
-{p}File stego adalah file yang mengandung informasi atau data yang disembunyikan di dalamnya,{r}
-{p}di mana data tersebut tidak dapat dilihat secara langsung. Biasanya, data ini disisipkan ke {r}
-{p}dalam file lain, seperti gambar, audio, atau video, menggunakan teknik steganografi.{r}
-""")
-
-try:
-    input(f"{p}Tekan [{h}Enter{p}] untuk melanjutkan...{r}")
-except KeyboardInterrupt:
-    print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
-    exit(1)
-except Exception as e:
-    print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
-    exit(1)
-
-# Membersihkan layar terminal
-os.system("clear")
-
-# Banner cek steghide 
-print(f"""
-{p}                         ,
-{p}  ,-.       _,---._ __  / l
-{p} /  )    .-'       `./ /   l
-{p}(  (   ,'            `/    /|
-{p} \  `-"             .'\   / |
-{p}  `.              ,  \ \ /  |
-{p}   /`.          ,'-`----Y   |
-{p}  (            ;        |   '
-{p}  |  ,-.    ,-'         |  /
-{p}  |  | (   |        {c}Cat {p}| /
-{p}  )  |  \  `.___________|/
-{p}  `--'   `--'
-{r}
-[{b}*{p}] Mengecek Steghide...{r}""")
-time.sleep(3)
-
-# Cek steghide 
-perintah_cek_steghide = f"steghide --version"
-hasil_perintah_cek_steghide = subprocess.run(perintah_cek_steghide, shell=True, capture_output=True, text=True)
-
-# Kondisi steghide sudah terinstal 
-if hasil_perintah_cek_steghide.returncode == 0:
-    print(f"{p}[{h}+{p}] Steghide sudah terinstal.{r}")
-    try:
-        input(f"\n{p}Tekan [{h}Enter{p}] untuk melanjutkan...{r}")
-    except KeyboardInterrupt:
-        print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
-        exit(1)
-    except Exception as e:
-        print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
-        exit(1)
-    os.system("clear")
-# Kondisi steghide belum terinstal 
-else:
-    print(f"{p}[{m}-{p}] Steghide belum terinstal.{r}")
-    print(f"{p}[{m}-{p}] Instal dengan mengetikkan perintah 'apt-get install steghide'.{r}")
-    exit(1)
-
 # Banner program 
 print(f"""
 {c}     _             ____                     _    {r}
