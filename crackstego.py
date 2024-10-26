@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 #------------------------------------------------------------------------------------------------------------------
-# Program   : Steg2Crack
+# Program   : CrackStego
 # Deskripsi : Program Python sederhana yang dirancang untuk meng-crack file stego dengan teknik Dictionary Attack.
 # Pembuat   : fixploit03 
 # Rilis     : 5-10-2024
-# Github    : https://github.com/fixploit03/Steg2Crack/
+# Github    : https://github.com/fixploit03/CrackStego/
 #------------------------------------------------------------------------------------------------------------------
 # MIT License
 # 
@@ -60,10 +60,10 @@ print(f"""
 {c}║  ╠╦╝╠═╣║  ╠╩╗  ╚═╗ ║ ║╣ ║ ╦║ ║{r}
 {c}╚═╝╩╚═╩ ╩╚═╝╩ ╩  ╚═╝ ╩ ╚═╝╚═╝╚═╝{r}
 
-{p}[{b}*{p}] Program   : {b}Steg2Crack{r}
+{p}[{b}*{p}] Program   : {b}CrackStego{r}
 {p}[{b}*{p}] Deskripsi : {b}Program Python untuk meng-crack file stego{r}
 {p}[{b}*{p}] Pembuat   : {b}fixploit03{r}
-{p}[{b}*{p}] Github    : {b}https://github.com/fixploit03/Steg2Crack/{r}
+{p}[{b}*{p}] Github    : {b}https://github.com/fixploit03/CrackStego/{r}
 {p}[{b}*{p}] Team      : {b}ArSec (Arjuna Security){r}
 """)
 
