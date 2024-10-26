@@ -120,6 +120,7 @@ if hasil_perintah_cek_steghide.returncode == 0:
 # Kondisi steghide belum terinstal 
 else:
     print(f"{p}[{m}-{p}] Steghide belum terinstal.{r}")
+    print(f"{p}[{m}-{p}] Instal dengan mengetikkan perintah 'apt-get install steghide'.{r}")
     exit(1)
 
 # Banner program 
