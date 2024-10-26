@@ -151,7 +151,6 @@ while True:
                         break
                     else:
                         print(f"{p}[{m}-{p}] File '{file_stego}' bukan file stego.{r}")
-                        continue
             except KeyboardInterrupt:
                 print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
                 exit(1)
@@ -160,7 +159,6 @@ while True:
                 exit(1)
     except FileNotFoundError:
         print(f"{p}[{m}-{p}] File stego '{file_stego}' tidak ditemukan.{r}")
-        continue
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
