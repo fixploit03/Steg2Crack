@@ -2,7 +2,7 @@ Rilis [5-10-2024]
 
 CrackStego 
 ----------
-CrackStego adalah program Python sederhana yang dirancang untuk meng-crack file stego menggunakan teknik Dictionary Attack.
+CrackStego adalah Program python yang dirancang untuk meng-crack file stego yang dihasilkan oleh Steghide dengan menggunakan teknik serangan Dictionary Attack.
 
 Peringatan
 ----------
