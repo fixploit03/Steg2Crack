@@ -141,26 +141,16 @@ print(f"""
 while True:
     try:
         file_stego = input(f"{p}[{b}#{p}] Masukkan nama file stego : ")
-        with open(file_stego, "rb"):
-            perintah_cek_file_stego = f"strings {file_stego}"
-            try:
-                cek_file_stego = subprocess.run(perintah_cek_file_stego, shell=True, capture_output=True, text=True)
-                if cek_file_stego.returncode == 0:
-                    pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
-                    if re.search(pola_file_steghide, cek_file_stego.stdout):
-                        break
-                    else:
-                        print(f"{p}[{m}-{p}] File '{file_stego}' bukan file stego.{r}")
-                        continue
-            except KeyboardInterrupt:
-                print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
-                exit(1)
-            except Exception as e:
-                print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
-                exit(1)
-    except FileNotFoundError:
-        print(f"{p}[{m}-{p}] File stego '{file_stego}' tidak ditemukan.{r}")
-        continue
+        if not file_stego:
+            print(f"{p}[{m}-{p}] File stego tidak boleh kosong.{r}")
+            continue 
+        if not os.path.isfile(file_stego):
+            print(f"{p}[{m}-{p}] File stego '{file_stego}' tidak ditemukan.{r}")
+            continue
+        if not file_stego.endswith((".jpg", ".jpeg", ".bmp", ".wav", ".au")):
+            print(f"{p}[{m}-{p}] File '{file_stego}' bukan file stego.{r}")
+            continue
+        break 
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
