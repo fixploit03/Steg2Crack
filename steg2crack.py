@@ -151,6 +151,19 @@ while True:
         if not file_stego.endswith((".jpg", ".jpeg", ".wav", ".au")):
             print(f"{p}[{m}-{p}] File '{file_stego}' bukan file stego.{r}")
             continue
+        perintah_cek_file_stego = f"strings {file_stego}"
+        try:
+            cek_file_stego = subprocess.run(perintah_cek_file_stego, shell=True, capture_output=True, text=True)
+            if cek_file_stego.returncode == 0:
+                pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
+                if re.search(pola_file_steghide, cek_file_stego.stdout):
+                    break
+                else:
+                    print(f"{p}[{m}-{p}] File '{file_stego}' bukan file stego.{r}")
+                    continue
+        except Exception as e:
+            print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
+            exit(1)
         break
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
